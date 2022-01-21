@@ -1,0 +1,34 @@
+﻿@using AsansorTakip.Models
+@model List<Bakimlar>
+@{
+    ViewBag.Title = "BakimlariListele";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 style="background-color:black;color:white;text-align:center">BAKIM LİSTESİ</h1>
+<table class="table table-striped table-dark">
+
+    <tr>
+        <th>Yetkili</th>
+        <th>Apartman Adı</th>
+        <th>Seri Numarası</th>
+        <th>Açıklama</th>
+        <th>Bakım Ücreti</th>
+        <th>Bakım Tarihi</th>
+        <th>Bakım Yapılacak Tarih</th>
+    </tr>
+    @foreach (var bakim in Model)
+    {
+        <tr>
+            <td>@bakim.Asansorler.Musteriler.Yetkili</td>
+            <td>@bakim.Asansorler.Musteriler.ApartmanAdi Apartmanı</td>
+            <td>@bakim.Asansorler.SeriNumarasi</td>
+            <td>@bakim.Aciklama.Substring(0,15)</td>
+            <td>@((int)bakim.BakimUcreti.GetValueOrDefault()) ₺</td>
+            <td>@bakim.BakimTarihi.GetValueOrDefault().ToShortDateString()</td>
+            <td>@bakim.BakimTarihi.GetValueOrDefault().AddYears(1).ToShortDateString()</td>
+        </tr>
+    }
+
+</table>
+

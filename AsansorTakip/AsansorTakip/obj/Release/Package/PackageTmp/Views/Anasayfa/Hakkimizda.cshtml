@@ -1,0 +1,23 @@
+﻿@using AsansorTakip.Models
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @foreach (var hakkimizda in Model)
+    {
+    <div style="padding-top:200px;background-color:black">
+        <h1 style="background-color:white">Hakkımızda</h1>
+        <p style="background-color: white">@hakkimizda.Hakkımızda</p>
+        <h1 style="background-color: white">Neden Uyumaz Mühendislik</h1>
+        <p style="background-color: white">@hakkimizda.Hakkimizda2</p>
+    </div>
+    }
+
+</body>
+</html>

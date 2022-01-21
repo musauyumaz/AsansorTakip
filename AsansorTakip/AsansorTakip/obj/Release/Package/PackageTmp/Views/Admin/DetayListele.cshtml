@@ -1,0 +1,43 @@
+﻿@model AsansorTakip.Models.Bakimlar
+@{
+    ViewBag.Title = "DetayListele";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Detaylar</h2>
+<br />
+<form method="post" class="form-group">
+
+    @Html.LabelFor(x => x.Asansorler.Musteriler.ApartmanAdi)
+    @Html.TextBoxFor(x => x.Asansorler.Musteriler.ApartmanAdi, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Asansorler.Musteriler.ApartmanKatSayisi)
+    @Html.TextBoxFor(x => x.Asansorler.Musteriler.ApartmanKatSayisi, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Asansorler.Musteriler.Yetkili)
+    @Html.TextBoxFor(x => x.Asansorler.Musteriler.Yetkili, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Asansorler.Musteriler.Adres)
+    @Html.TextBoxFor(x => x.Asansorler.Musteriler.Adres, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Asansorler.SeriNumarasi)
+    @Html.TextBoxFor(x => x.Asansorler.SeriNumarasi, new { @class = "form-control", @maxlength = "8", @minlength = "8", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Asansorler.MaxAgirlik)
+    @Html.TextBoxFor(x => x.Asansorler.MaxAgirlik, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Asansorler.ToplamMotorGucu)
+    @Html.TextBoxFor(x => x.Asansorler.ToplamMotorGucu, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control", @required = "" })
+    <br />
+    @Html.LabelFor(x => x.BakimUcreti)
+    @Html.TextBoxFor(x => x.BakimUcreti, new { @class = "form-control", @required = "" })₺
+    <br />
+    @Html.LabelFor(x => x.BakimTarihi)
+    @Html.TextBoxFor(x => x.BakimTarihi, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    <button class="btn btn-primary">Bakım Yap</button>
+</form>
+

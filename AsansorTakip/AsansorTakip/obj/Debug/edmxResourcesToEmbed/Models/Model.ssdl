@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BitirmeProjesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Anasayfa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="100" />
+    <Property Name="Hakkımızda" Type="varchar(max)" />
+    <Property Name="Hakkimizda2" Type="varchar(max)" />
+    <Property Name="Adres" Type="varchar(max)" />
+    <Property Name="Telefon" Type="varchar" MaxLength="16" />
+    <Property Name="HaritaAdres" Type="varchar" MaxLength="500" />
+    <Property Name="Mail" Type="varchar" MaxLength="100" />
+    <Property Name="Github" Type="varchar" MaxLength="250" />
+    <Property Name="LinkedIn" Type="varchar" MaxLength="250" />
+    <Property Name="Instagram" Type="varchar" MaxLength="250" />
+    <Property Name="Twitter" Type="varchar" MaxLength="250" />
+    <Property Name="WebSite" Type="varchar" MaxLength="250" />
+    <Property Name="SliderImage1" Type="varchar" MaxLength="500" />
+    <Property Name="SliderImage2" Type="varchar" MaxLength="500" />
+    <Property Name="SliderImage3" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Asansorler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusteriId" Type="int" />
+    <Property Name="SeriNumarasi" Type="int" />
+    <Property Name="MaxAgirlik" Type="int" />
+    <Property Name="ToplamMotorGucu" Type="int" />
+    <Property Name="AsansorQrCodeImage" Type="varchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="EklenmeTarihi" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Musteriler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AsansorId" Type="int" />
+    <Property Name="ApartmanAdi" Type="varchar" MaxLength="250" />
+    <Property Name="ApartmanKatSayisi" Type="tinyint" />
+    <Property Name="Yetkili" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="EklenmeTarihi" Type="smalldatetime" />
+  </EntityType>
+  <EntityContainer Name="BitirmeProjesiModelStoreContainer">
+    <EntitySet Name="Anasayfa" EntityType="Self.Anasayfa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Asansorler" EntityType="Self.Asansorler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

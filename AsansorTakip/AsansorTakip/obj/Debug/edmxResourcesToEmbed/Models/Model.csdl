@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BitirmeProjesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BitirmeProjesiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Asansorler" EntityType="BitirmeProjesiModel.Asansorler" />
+    <EntitySet Name="Musteriler" EntityType="BitirmeProjesiModel.Musteriler" />
+  </EntityContainer>
+  <EntityType Name="Asansorler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MusteriId" Type="Int32" />
+    <Property Name="SeriNumarasi" Type="Int32" />
+    <Property Name="MaxAgirlik" Type="Int32" />
+    <Property Name="ToplamMotorGucu" Type="Int32" />
+    <Property Name="AsansorQrCodeImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="EklenmeTarihi" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Musteriler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AsansorId" Type="Int32" />
+    <Property Name="ApartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ApartmanKatSayisi" Type="Byte" />
+    <Property Name="Yetkili" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="EklenmeTarihi" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

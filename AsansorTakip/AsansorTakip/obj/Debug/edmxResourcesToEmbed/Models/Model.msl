@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BitirmeProjesiModelStoreContainer" CdmEntityContainer="BitirmeProjesiEntities">
+    <EntitySetMapping Name="Asansorler">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Asansorler">
+        <MappingFragment StoreEntitySet="Asansorler">
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AsansorQrCodeImage" ColumnName="AsansorQrCodeImage" />
+          <ScalarProperty Name="ToplamMotorGucu" ColumnName="ToplamMotorGucu" />
+          <ScalarProperty Name="MaxAgirlik" ColumnName="MaxAgirlik" />
+          <ScalarProperty Name="SeriNumarasi" ColumnName="SeriNumarasi" />
+          <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteriler">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Musteriler">
+        <MappingFragment StoreEntitySet="Musteriler">
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Yetkili" ColumnName="Yetkili" />
+          <ScalarProperty Name="ApartmanKatSayisi" ColumnName="ApartmanKatSayisi" />
+          <ScalarProperty Name="ApartmanAdi" ColumnName="ApartmanAdi" />
+          <ScalarProperty Name="AsansorId" ColumnName="AsansorId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

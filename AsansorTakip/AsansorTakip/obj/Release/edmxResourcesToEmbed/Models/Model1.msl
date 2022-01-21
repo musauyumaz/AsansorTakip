@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BitirmeProjesiModelStoreContainer" CdmEntityContainer="BitirmeProjesiEntities1">
+    <EntitySetMapping Name="Anasayfa">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Anasayfa">
+        <MappingFragment StoreEntitySet="Anasayfa">
+          <ScalarProperty Name="SliderImage3" ColumnName="SliderImage3" />
+          <ScalarProperty Name="SliderImage2" ColumnName="SliderImage2" />
+          <ScalarProperty Name="SliderImage1" ColumnName="SliderImage1" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+          <ScalarProperty Name="Github" ColumnName="Github" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="HaritaAdres" ColumnName="HaritaAdres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Hakkimizda2" ColumnName="Hakkimizda2" />
+          <ScalarProperty Name="Hakkımızda" ColumnName="Hakkımızda" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asansorler">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Asansorler">
+        <MappingFragment StoreEntitySet="Asansorler">
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="QrCodeImageString" ColumnName="QrCodeImageString" />
+          <ScalarProperty Name="ToplamMotorGucu" ColumnName="ToplamMotorGucu" />
+          <ScalarProperty Name="MaxAgirlik" ColumnName="MaxAgirlik" />
+          <ScalarProperty Name="SeriNumarasi" ColumnName="SeriNumarasi" />
+          <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteriler">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Musteriler">
+        <MappingFragment StoreEntitySet="Musteriler">
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Yetkili" ColumnName="Yetkili" />
+          <ScalarProperty Name="ApartmanKatSayisi" ColumnName="ApartmanKatSayisi" />
+          <ScalarProperty Name="ApartmanAdi" ColumnName="ApartmanAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bakimlar">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Bakimlar">
+        <MappingFragment StoreEntitySet="Bakimlar">
+          <ScalarProperty Name="BakimTarihi" ColumnName="BakimTarihi" />
+          <ScalarProperty Name="BakimUcreti" ColumnName="BakimUcreti" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="AsansorId" ColumnName="AsansorId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adminler">
+      <EntityTypeMapping TypeName="BitirmeProjesiModel.Adminler">
+        <MappingFragment StoreEntitySet="Adminler">
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

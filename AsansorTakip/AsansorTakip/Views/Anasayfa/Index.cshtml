@@ -1,0 +1,397 @@
+﻿@using AsansorTakip.Models
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Uyumaz Mühendislik</title>
+    <!--meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Leccy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--//meta tags ends here-->
+    <!--booststrap-->
+    <link href="~/web/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!--//booststrap end-->
+    <!-- font-awesome icons -->
+    <link href="~/web/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- For Clients slider -->
+    <link rel="stylesheet" href="~/web/css/flexslider.css" type="text/css" media="all" />
+    <!-- //For clients slider -->
+    <link href="~/web/css/lsb.css" rel="stylesheet" type="text/css">
+    <!--gallery lsb lightbox-->
+    <!--stylesheets-->
+    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' media="all">
+    <!--//stylesheets-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+</head>
+<body>
+
+    
+    <div class="header-outs" id="home">
+
+        <div class="slider">
+            <div class="callbacks_container">
+                <ul class="rslides" id="slider4">
+                    <li>
+                        <div class="slider-img one-img">
+                            <div class="container">
+                                <div class="slider-info">
+                                    <h4>En İyi Asansör Servisi</h4>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slider-img two-img">
+                            <div class="container">
+                                <div class="slider-info">
+                                    <h4>Güvenle Yukarı Çıkın</h4>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- This is here just to demonstrate the callbacks -->
+            <!-- <ul class="events">
+               <li>Example 4 callback events</li>
+               </ul>-->
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    @foreach (var anasayfa in Model)
+    {
+
+
+        <div class="about" id="about">
+            <div class="container-fluid">
+                <div class="row abt-colm offset">
+                    <div class="col-lg-5 agile-info-img">
+                        <img src=@anasayfa.SliderImage2 alt="">
+                    </div>
+                    <div class="col-lg-7 agile-abt-info">
+                        <h2>
+                            Hakkımızda Ne Biliyorsunuz
+                            <br>Sizlere Neler Yapıyoruz
+                        </h2>
+                        <div class="info-sub-w3">
+                            <h4>UYUMAZ MÜHENDİSLİK</h4>
+                            <p>
+                                @anasayfa.Hakkımızda
+                            </p>
+                        </div>
+                        <div class="arrow">
+                            <ul>
+                                <li>
+                                    <span class="fa fa-chevron-right dog-arrow" aria-hidden="true"></span>
+                                    <p>BAKIM</p>
+                                </li>
+                                <li>
+                                    <span class="fa fa-chevron-right dog-arrow" aria-hidden="true"></span>
+                                    <p>REVİZYON</p>
+                                </li>
+                                <li>
+                                    <span class="fa fa-chevron-right dog-arrow" aria-hidden="true"></span>
+                                    <p>MONTAJ</p>
+                                </li>
+                                <li>
+                                    <span class="fa fa-chevron-right dog-arrow" aria-hidden="true"></span>
+                                    <p>TAMİR</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="jst-must-info">
+                    <div class="stats-info row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 stats-grid stats-grid-1">
+                            <div class="counter">3500</div>
+                            <div class="stat-info">
+                                <h4>Asansör Tamiri</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 stats-grid stats-grid-2">
+                            <div class="counter">650</div>
+                            <div class="stat-info">
+                                <h4>Müşteri</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 stats-grid stats-grid-3">
+                            <div class="counter">1950</div>
+                            <div class="stat-info">
+                                <h4>Asansör Kurulumu</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 stats-grid stats-grid-4">
+                            <div class="counter">6000</div>
+                            <div class="stat-info">
+                                <h4>Asansör Bakımı</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gallery" class="gallery">
+            <div class="container">
+                <h3 class="title clr">Portfolyo</h3>
+                <div class="row agile_gallery_grids">
+                    <div class="col-lg-4 col-md-6 col-sm-6 agile_gallery_grid">
+                        <div class="hover ehover14">
+                            <a href="~/web/images/g1.jpg" class="lsb-preview wthree_p_grid" data-lsb-group="header">
+                                <img src="~/web/images/g1.jpg" alt=" " class="img-responsive" />
+                                <div class="overlay">
+                                    <h4>UYUMAZ MÜHENDİSLİK</h4>
+                                    <div class="info nullbutton button">Full View</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 agile_gallery_grid">
+                        <div class="hover ehover14">
+                            <a href="~/web/images/g2.jpg" class="lsb-preview wthree_p_grid" data-lsb-group="header">
+                                <img src="~/web/images/g2.jpg" alt=" " class="img-responsive" />
+                                <div class="overlay">
+                                    <h4>UYUMAZ MÜHENDİSLİK</h4>
+                                    <div class="info nullbutton button">Full View</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 agile_gallery_grid">
+                        <div class="hover ehover14">
+                            <a href="~/web/images/g3.jpg" class="lsb-preview wthree_p_grid" data-lsb-group="header">
+                                <img src="~/web/images/g3.jpg" alt=" " class="img-responsive" />
+                                <div class="overlay">
+                                    <h4>UYUMAZ MÜHENDİSLİK</h4>
+                                    <div class="info nullbutton button">Full View</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 agile_gallery_grid grid1">
+                        <div class="hover ehover14">
+                            <a href="~/web/images/g4.jpg" class="lsb-preview wthree_p_grid" data-lsb-group="header">
+                                <img src="~/web/images/g4.jpg" alt=" " class="img-responsive" />
+                                <div class="overlay">
+                                    <h4>UYUMAZ MÜHENDİSLİK</h4>
+                                    <div class="info nullbutton button">Full View</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 agile_gallery_grid grid1">
+                        <div class="hover ehover14">
+                            <a href="~/web/images/g5.jpg" class="lsb-preview wthree_p_grid" data-lsb-group="header">
+                                <img src="~/web/images/g5.jpg" alt=" " class="img-responsive" />
+                                <div class="overlay">
+                                    <h4>UYUMAZ MÜHENDİSLİK</h4>
+                                    <div class="info nullbutton button">Full View</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 agile_gallery_grid grid1">
+                        <div class="hover ehover14">
+                            <a href="~/web/images/g6.jpg" class="lsb-preview wthree_p_grid" data-lsb-group="header">
+                                <img src="~/web/images/g6.jpg" alt=" " class="img-responsive" />
+                                <div class="overlay">
+                                    <h4>UYUMAZ MÜHENDİSLİK</h4>
+                                    <div class="info nullbutton button">Full View</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //gallery -->
+        <!--clients-->
+        <div class="clients" id="clients">
+            <h3 class="title">Müşteriler</h3>
+            <div class="row clients-says-agile">
+                <div class="col-lg-6 wthree-clients-left">
+                </div>
+                <div class="col-lg-6 w3l-clients-right">
+                    <section class="slider">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="images/c1.jpg" alt="" />
+                                    <p>Akşam 23:54'te aradık hemen güzel bir şekilde ilgilendiler 10 dk içinde hemen servis geldi ve sorunumuzu çözdü çok teşekkürler</p>
+                                    <div class="client">
+                                        <h5>Ali Akça</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/c2.jpg" alt="" />
+                                    <p>Gayet işlerinde başarılı bir firma Asansörlerinizi güvenle kontrol ettirebilirsiniz</p>
+                                    <div class="client">
+                                        <h5>Veli Korkmaz</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/c3.jpg" alt="" />
+                                    <p>Yaptırdığımız binaya bu şirketten asansör aldık gayet güvenilir ve fiyat olarakta oldukça uygun</p>
+                                    <div class="client">
+                                        <h5>Halil Yılmaz</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="images/c4.jpg" alt="" />
+                                    <p>Binamızdaki asansör sürekli arıza verip duruyordu birçok servis geldi ve baktı çözüm bulamadı sağolsun bu servis tüm sorunları halletti tüm bina yöneticilerine tavsiye ederim bence en iyi servis</p>
+                                    <div class="client">
+                                        <h5>Kazım Demir</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+        <!--//price table -->
+        <!--team -->
+        <section class="team" id="team">
+            <div class="container-fluid">
+                <h3 class="title">Takımımızla Tanışın</h3>
+                <div class="row pt-md">
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="bodr-img">
+                            <h4>Takım Üyeleri</h4>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <img src="~/web/images/musa.jpg" alt="">
+                            <ul class="text-center">
+                                <li>
+                                    <h4>MUSA UYUMAZ</h4>
+                                </li>
+                                <li>
+                                    <h6>GENEL MÜDÜR</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <div class="team-list-img">
+                                <img src="~/web/images/hazar.jpg" alt="">
+                            </div>
+                            <ul class="text-center">
+                                <li>
+                                    <h4>HAZAR BAHAROĞLU</h4>
+                                </li>
+                                <li>
+                                    <h6>ELEKTRİK ELEKTRONİK MÜHENDİSİ</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <img src="~/web/images/usta.jpg" alt="">
+                            <ul class="text-center">
+                                <li>
+                                    <h4>TALHA YEŞİL</h4>
+                                </li>
+                                <li>
+                                    <h6>ELEKTRİK USTASI</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-md">
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <img src="~/web/images/t6.jpg" alt="">
+                            <ul class="text-center">
+                                <li>
+                                    <h4>MURAT KARA</h4>
+                                </li>
+                                <li>
+                                    <h6>ELEKTRİK TEKNİSYENİ</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <img src="~/web/images/t5.jpg" alt="">
+                            <ul class="text-center">
+                                <li>
+                                    <h4>MUSTAFA YILMAZ</h4>
+                                </li>
+                                <li>
+                                    <h6>ELEKTRİK TEKNİSYENİ</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <div class="team-list-img">
+                                <img src="~/web/images/t2.jpg" alt="">
+                            </div>
+                            <ul class="text-center">
+                                <li>
+                                    <h4>FERHAT KIZILDAĞ</h4>
+                                </li>
+                                <li>
+                                    <h6>ELEKTRİK TEKNİSYENİ</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 profile">
+                        <div class="img-box">
+                            <img src="~/web/images/teknisyen.jpg" style="height:474px" alt="">
+                            <ul class="text-center">
+                                <li>
+                                    <h4>YAKUP ÖZEN</h4>
+                                </li>
+                                <li>
+                                    <h6>ELEKTRİK TEKNİSYENİ</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</body>
+</html>
+

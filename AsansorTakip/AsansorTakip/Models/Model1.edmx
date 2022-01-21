@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BitirmeProjesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adminler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Anasayfa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="100" />
+          <Property Name="Hakkımızda" Type="varchar(max)" />
+          <Property Name="Hakkimizda2" Type="varchar(max)" />
+          <Property Name="Adres" Type="varchar(max)" />
+          <Property Name="Telefon" Type="varchar" MaxLength="16" />
+          <Property Name="HaritaAdres" Type="varchar" MaxLength="500" />
+          <Property Name="Mail" Type="varchar" MaxLength="100" />
+          <Property Name="Github" Type="varchar" MaxLength="250" />
+          <Property Name="LinkedIn" Type="varchar" MaxLength="250" />
+          <Property Name="Instagram" Type="varchar" MaxLength="250" />
+          <Property Name="Twitter" Type="varchar" MaxLength="250" />
+          <Property Name="WebSite" Type="varchar" MaxLength="250" />
+          <Property Name="SliderImage1" Type="varchar" MaxLength="500" />
+          <Property Name="SliderImage2" Type="varchar" MaxLength="500" />
+          <Property Name="SliderImage3" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Asansorler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriId" Type="int" />
+          <Property Name="SeriNumarasi" Type="varchar" MaxLength="8" />
+          <Property Name="MaxAgirlik" Type="int" />
+          <Property Name="ToplamMotorGucu" Type="int" />
+          <Property Name="QrCodeImageString" Type="varchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="EklenmeTarihi" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Bakimlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AsansorId" Type="int" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="BakimUcreti" Type="money" />
+          <Property Name="BakimTarihi" Type="date" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApartmanAdi" Type="varchar" MaxLength="250" />
+          <Property Name="ApartmanKatSayisi" Type="tinyint" />
+          <Property Name="Yetkili" Type="varchar" MaxLength="150" />
+          <Property Name="Adres" Type="varchar" MaxLength="1000" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="EklenmeTarihi" Type="smalldatetime" />
+        </EntityType>
+        <Association Name="FK_Asansorler_Musteriler">
+          <End Role="Musteriler" Type="Self.Musteriler" Multiplicity="0..1" />
+          <End Role="Asansorler" Type="Self.Asansorler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Asansorler">
+              <PropertyRef Name="MusteriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bakimlar_Asansorler">
+          <End Role="Asansorler" Type="Self.Asansorler" Multiplicity="0..1" />
+          <End Role="Bakimlar" Type="Self.Bakimlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asansorler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bakimlar">
+              <PropertyRef Name="AsansorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BitirmeProjesiModelStoreContainer">
+          <EntitySet Name="Adminler" EntityType="Self.Adminler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anasayfa" EntityType="Self.Anasayfa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Asansorler" EntityType="Self.Asansorler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bakimlar" EntityType="Self.Bakimlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Asansorler_Musteriler" Association="Self.FK_Asansorler_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Asansorler" EntitySet="Asansorler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bakimlar_Asansorler" Association="Self.FK_Bakimlar_Asansorler">
+            <End Role="Asansorler" EntitySet="Asansorler" />
+            <End Role="Bakimlar" EntitySet="Bakimlar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BitirmeProjesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BitirmeProjesiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Anasayfa" EntityType="BitirmeProjesiModel.Anasayfa" />
+          <EntitySet Name="Asansorler" EntityType="BitirmeProjesiModel.Asansorler" />
+          <EntitySet Name="Musteriler" EntityType="BitirmeProjesiModel.Musteriler" />
+          <AssociationSet Name="FK_Asansorler_Musteriler" Association="BitirmeProjesiModel.FK_Asansorler_Musteriler">
+            <End Role="Musteriler" EntitySet="Musteriler" />
+            <End Role="Asansorler" EntitySet="Asansorler" />
+          </AssociationSet>
+          <EntitySet Name="Bakimlar" EntityType="BitirmeProjesiModel.Bakimlar" />
+          <AssociationSet Name="FK_Bakimlar_Asansorler" Association="BitirmeProjesiModel.FK_Bakimlar_Asansorler">
+            <End Role="Asansorler" EntitySet="Asansorler" />
+            <End Role="Bakimlar" EntitySet="Bakimlar" />
+          </AssociationSet>
+          <EntitySet Name="Adminler" EntityType="BitirmeProjesiModel.Adminler" />
+        </EntityContainer>
+        <EntityType Name="Anasayfa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Hakkımızda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hakkimizda2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="HaritaAdres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Github" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LinkedIn" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Instagram" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Twitter" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderImage1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SliderImage2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SliderImage3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Asansorler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="Int32" />
+          <Property Name="SeriNumarasi" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MaxAgirlik" Type="Int32" />
+          <Property Name="ToplamMotorGucu" Type="Int32" />
+          <Property Name="QrCodeImageString" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="EklenmeTarihi" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Musteriler" Relationship="BitirmeProjesiModel.FK_Asansorler_Musteriler" FromRole="Asansorler" ToRole="Musteriler" />
+          <NavigationProperty Name="Bakimlar" Relationship="BitirmeProjesiModel.FK_Bakimlar_Asansorler" FromRole="Asansorler" ToRole="Bakimlar" />
+        </EntityType>
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ApartmanKatSayisi" Type="Byte" />
+          <Property Name="Yetkili" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="EklenmeTarihi" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Asansorler" Relationship="BitirmeProjesiModel.FK_Asansorler_Musteriler" FromRole="Musteriler" ToRole="Asansorler" />
+        </EntityType>
+        <Association Name="FK_Asansorler_Musteriler">
+          <End Type="BitirmeProjesiModel.Musteriler" Role="Musteriler" Multiplicity="0..1" />
+          <End Type="BitirmeProjesiModel.Asansorler" Role="Asansorler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteriler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Asansorler">
+              <PropertyRef Name="MusteriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Bakimlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AsansorId" Type="Int32" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BakimUcreti" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BakimTarihi" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Asansorler" Relationship="BitirmeProjesiModel.FK_Bakimlar_Asansorler" FromRole="Bakimlar" ToRole="Asansorler" />
+        </EntityType>
+        <Association Name="FK_Bakimlar_Asansorler">
+          <End Type="BitirmeProjesiModel.Asansorler" Role="Asansorler" Multiplicity="0..1" />
+          <End Type="BitirmeProjesiModel.Bakimlar" Role="Bakimlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asansorler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bakimlar">
+              <PropertyRef Name="AsansorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Adminler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BitirmeProjesiModelStoreContainer" CdmEntityContainer="BitirmeProjesiEntities1">
+          <EntitySetMapping Name="Anasayfa">
+            <EntityTypeMapping TypeName="BitirmeProjesiModel.Anasayfa">
+              <MappingFragment StoreEntitySet="Anasayfa">
+                <ScalarProperty Name="SliderImage3" ColumnName="SliderImage3" />
+                <ScalarProperty Name="SliderImage2" ColumnName="SliderImage2" />
+                <ScalarProperty Name="SliderImage1" ColumnName="SliderImage1" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+                <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+                <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+                <ScalarProperty Name="Github" ColumnName="Github" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="HaritaAdres" ColumnName="HaritaAdres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Hakkimizda2" ColumnName="Hakkimizda2" />
+                <ScalarProperty Name="Hakkımızda" ColumnName="Hakkımızda" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Asansorler">
+            <EntityTypeMapping TypeName="BitirmeProjesiModel.Asansorler">
+              <MappingFragment StoreEntitySet="Asansorler">
+                <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="QrCodeImageString" ColumnName="QrCodeImageString" />
+                <ScalarProperty Name="ToplamMotorGucu" ColumnName="ToplamMotorGucu" />
+                <ScalarProperty Name="MaxAgirlik" ColumnName="MaxAgirlik" />
+                <ScalarProperty Name="SeriNumarasi" ColumnName="SeriNumarasi" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteriler">
+            <EntityTypeMapping TypeName="BitirmeProjesiModel.Musteriler">
+              <MappingFragment StoreEntitySet="Musteriler">
+                <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Yetkili" ColumnName="Yetkili" />
+                <ScalarProperty Name="ApartmanKatSayisi" ColumnName="ApartmanKatSayisi" />
+                <ScalarProperty Name="ApartmanAdi" ColumnName="ApartmanAdi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bakimlar">
+            <EntityTypeMapping TypeName="BitirmeProjesiModel.Bakimlar">
+              <MappingFragment StoreEntitySet="Bakimlar">
+                <ScalarProperty Name="BakimTarihi" ColumnName="BakimTarihi" />
+                <ScalarProperty Name="BakimUcreti" ColumnName="BakimUcreti" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="AsansorId" ColumnName="AsansorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Adminler">
+            <EntityTypeMapping TypeName="BitirmeProjesiModel.Adminler">
+              <MappingFragment StoreEntitySet="Adminler">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

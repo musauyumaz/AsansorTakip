@@ -1,0 +1,33 @@
+﻿@model AsansorTakip.Models.Asansorler
+@{
+    ViewBag.Title = "AsansorGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Asansor Güncelleme</h2>
+
+@using (Html.BeginForm("AsansorGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Musteriler.Yetkili)
+    @Html.TextBoxFor(x => x.Musteriler.Yetkili, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Musteriler.ApartmanAdi)
+    @Html.TextBoxFor(x => x.Musteriler.ApartmanAdi, new { @class = "form-control", @required = "", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.SeriNumarasi)
+    @Html.TextBoxFor(x => x.SeriNumarasi, new { @class = "form-control", @required = "" })
+    <br />
+    @Html.LabelFor(x => x.MaxAgirlik)
+    @Html.TextBoxFor(x => x.MaxAgirlik, new { @class = "form-control", @required = "" })
+    <br />
+    @Html.LabelFor(x => x.ToplamMotorGucu)
+    @Html.TextBoxFor(x => x.ToplamMotorGucu, new { @class = "form-control", @required = "" })
+    <br />
+    @Html.LabelFor(x => x.QrCodeImageString)
+    @Html.TextBoxFor(x => x.QrCodeImageString, new { @class = "form-control", @required = "" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+}

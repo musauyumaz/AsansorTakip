@@ -1,0 +1,34 @@
+﻿@using AsansorTakip.Models
+@model List<Musteriler>
+@{
+    ViewBag.Title = "MusteriListele";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1 style="background-color:black;color:white;text-align:center">MÜŞTERİ LİSTESİ</h1>
+<table class="table table-striped table-dark">
+
+    <tr>
+        <th>Yetkili</th>
+        <th>Apartman Adı</th>
+        <th>Apartman Kat Sayısı</th>
+        <th>Adres</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+
+    </tr>
+    @foreach (var musteri in Model)
+    {
+        <tr>
+            <td>@musteri.Yetkili</td>
+            <td>@musteri.ApartmanAdi Apartmanı</td>
+            <td>@musteri.ApartmanKatSayisi</td>
+            <td>@musteri.Adres</td>
+            <td><a href="/Admin/MusteriSil/@musteri.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/MusteriGetir/@musteri.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
